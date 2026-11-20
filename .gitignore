@@ -1,0 +1,6 @@
+# Local environment (Supabase credentials) — copy from env.example.js
+env.js
+
+# OS / editor
+.DS_Store
+*.swp

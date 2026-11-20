@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Прислать стих — Ündes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23823D46'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' fill='white' text-anchor='middle' font-weight='700'>Ü</text></svg>" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="submit">
+  <div data-navbar></div>
+  <main data-page>
+    <section class="section">
+      <div class="container" style="max-width:720px;">
+        <span class="eyebrow">Contribute</span>
+        <h1 class="section-title" data-i18n="submit.title">Прислать стихотворение</h1>
+        <p class="text-muted" data-i18n="submit.sub">Поделитесь любимым стихом с сообществом. После отправки произведение пройдёт модерацию.</p>
+        <div class="card" style="margin-top:32px;">
+          <form id="submitForm">
+            <div class="field">
+              <label class="field__label" data-i18n="submit.title_field">Название стиха</label>
+              <input class="input" type="text" id="titleInput" required />
+            </div>
+            <div class="field">
+              <label class="field__label" data-i18n="submit.author">Автор</label>
+              <input class="input" type="text" id="authorInput" placeholder="Имя автора" required />
+            </div>
+            <div class="grid" style="grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="field">
+                <label class="field__label" data-i18n="submit.language">Язык</label>
+                <select class="select select--form" id="langInput">
+                  <option value="kz">Қазақша</option>
+                  <option value="ru" selected>Русский</option>
+                  <option value="en">English</option>
+                </select>
+              </div>
+              <div class="field">
+                <label class="field__label" data-i18n="submit.category">Тема</label>
+                <select class="select select--form" id="catInput">
+                  <option value="" data-i18n="explore.allCategories">Все темы</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label class="field__label" data-i18n="submit.content">Текст стихотворения</label>
+              <textarea class="textarea" id="contentInput" required style="min-height:240px;"></textarea>
+              <span class="field__hint" data-i18n="submit.contentHint">Каждая строка с новой строки</span>
+            </div>
+            <button class="btn btn--lg btn--block" type="submit" id="submitBtn" data-i18n="submit.send">Отправить на модерацию</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div data-footer></div>
+
+  <script src="authors.js"></script>
+  <script src="poems.js"></script>
+  <script src="categories.js"></script>
+  <script src="i18n.js"></script>
+  <script src="config.js"></script>
+  <script src="storage.js"></script>
+  <script src="api.js"></script>
+  <script src="auth.js"></script>
+  <script src="tts.js"></script>
+  <script src="ui.js"></script>
+  <script src="layout.js"></script>
+  <script src="cards.js"></script>
+  <script src="quote-card.js"></script>
+  <script src="bootstrap.js"></script>
+  <script src="submit-page.js"></script>
+</body>
+</html>

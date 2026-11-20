@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ündes — Әр өлеңнің өз үні бар</title>
+  <meta name="description" content="Ündes — цифровая библиотека поэзии на казахском, русском и английском языках." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23823D46'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' fill='white' text-anchor='middle' font-weight='700'>Ü</text></svg>" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body data-page="index">
+  <div data-navbar></div>
+
+  <main data-page>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__eyebrow">
+          <span class="chip chip--primary" data-i18n="brand.tagline">Әр өлеңнің өз үні бар</span>
+        </div>
+        <h1 class="hero__title" data-i18n="hero.title">Открой мир поэзии</h1>
+        <p class="hero__sub" data-i18n="hero.sub">Три языка и три литературные культуры в одном пространстве — казахская, русская и английская поэзия, для тех, кто читает не переставая.</p>
+        <div class="hero__actions">
+          <a href="explore.html" class="btn btn--lg" data-i18n="hero.cta.read">Начать читать</a>
+          <a href="mood.html" class="btn btn--ghost btn--lg" data-i18n="hero.cta.explore">Открыть каталог</a>
+        </div>
+        <div class="hero__meta" id="heroStats">
+          <div class="hero__meta-item"><span class="hero__meta-num" id="statPoems">—</span><span data-i18n="hero.stats.poems">стихов</span></div>
+          <div class="hero__meta-item"><span class="hero__meta-num" id="statAuthors">—</span><span data-i18n="hero.stats.authors">авторов</span></div>
+          <div class="hero__meta-item"><span class="hero__meta-num" id="statLangs">—</span><span data-i18n="hero.stats.languages">языков</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POEM OF THE DAY -->
+    <section class="section section--tight">
+      <div class="container">
+        <div id="potdRoot">
+          <div class="potd">
+            <div style="display:flex;flex-direction:column;gap:24px;">
+              <span class="eyebrow" data-i18n="potd.eyebrow">Стих дня</span>
+              <div class="skeleton" style="height:28px;width:50%"></div>
+              <div class="skeleton skeleton--text" style="width:90%"></div>
+              <div class="skeleton skeleton--text" style="width:80%"></div>
+            </div>
+            <div class="poem-preview"><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text" style="width:70%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOOD -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__row">
+            <div>
+              <span class="eyebrow">Mood</span>
+              <h2 class="section-title" data-i18n="section.mood">Найди стихотворение по настроению</h2>
+            </div>
+            <a href="mood.html" class="section-head__link" data-i18n="section.viewAll">Смотреть все →</a>
+          </div>
+        </div>
+        <div class="grid grid--mood" id="moodGrid"></div>
+      </div>
+    </section>
+
+    <!-- POPULAR AUTHORS -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__row">
+            <div>
+              <span class="eyebrow">Authors</span>
+              <h2 class="section-title" data-i18n="section.popularAuthors">Популярные авторы</h2>
+            </div>
+            <a href="authors.html" class="section-head__link" data-i18n="section.viewAll">Смотреть все →</a>
+          </div>
+        </div>
+        <div class="grid grid--authors" id="authorsGrid"></div>
+      </div>
+    </section>
+
+    <!-- POPULAR POEMS -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__row">
+            <div>
+              <span class="eyebrow">Library</span>
+              <h2 class="section-title" data-i18n="section.popularPoems">Часто читают</h2>
+            </div>
+            <a href="explore.html?sort=popular" class="section-head__link" data-i18n="section.viewAll">Смотреть все →</a>
+          </div>
+        </div>
+        <div class="grid grid--poems" id="popularGrid"></div>
+      </div>
+    </section>
+
+    <!-- RECENT -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head__row">
+            <div>
+              <span class="eyebrow">New</span>
+              <h2 class="section-title" data-i18n="section.recent">Недавно добавленные</h2>
+            </div>
+            <a href="explore.html?sort=recent" class="section-head__link" data-i18n="section.viewAll">Смотреть все →</a>
+          </div>
+        </div>
+        <div class="grid grid--poems" id="recentGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-footer></div>
+
+  <!-- Data layer -->
+  <script src="authors.js"></script>
+  <script src="poems.js"></script>
+  <script src="categories.js"></script>
+  <script src="i18n.js"></script>
+  <!-- Services -->
+  <script src="config.js"></script>
+  <script src="storage.js"></script>
+  <script src="api.js"></script>
+  <script src="auth.js"></script>
+  <script src="tts.js"></script>
+  <script src="ui.js"></script>
+  <!-- Components -->
+  <script src="layout.js"></script>
+  <script src="cards.js"></script>
+  <script src="quote-card.js"></script>
+  <!-- Bootstrap + page init -->
+  <script src="bootstrap.js"></script>
+  <script src="home-page.js"></script>
+</body>
+</html>
